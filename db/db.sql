@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS election;
+DROP DATABASE IF EXISTS myworkplace;
 
-CREATE DATABASE election;
-USE election;
+CREATE DATABASE myworkplace;
+USE myworkplace;

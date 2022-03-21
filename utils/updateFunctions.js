@@ -1,11 +1,14 @@
+// UPDATE FUNCTION
+
 const path = require("path")
 
-const db = require('../../db/connection')
+const db = require('../db/connection')
 
 
 
-updateRole()
+function updateRole(){
 
+}
 
 
 

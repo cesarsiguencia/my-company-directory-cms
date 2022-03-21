@@ -1,40 +1,55 @@
-// utility to check if an object has the required properties
-// e.g., inputCheck(object, 'prop1', 'prop2', 'etc')
-
-// module.exports = function(obj, ...props) {
-//   const errors = [];
-
-//   props.forEach((prop) => {
-//     // if property is blank or doesn't exist, add to errors array
-//     if (obj[prop] === undefined || obj[prop] === '') {
-//       errors.push(`No ${prop} specified.`);
-//     }
-//   });
-
-//   if (errors.length) {
-//     return {
-//       error: errors.join(' ')
-//     };
-//   }
-  
-//   return null;
-// };
+//  GET FUNCTIONS
 
 const path = require("path")
 
-const db = require('../../db/connection')
+const db = require('../db/connection')
+
+console.log('reading GetFunctions page')
+
+function getDepartments( req, res ){
+    const sql = 'SELECT * FROM departments;'
+
+        db.connect(function(err) {
+            if (err) throw err;
+            db.query(sql, function (err, result, fields) {
+              if (err) throw err;
+              console.table(result);
+            });
+          });
+}
 
 
-getDepartment()
+function getRoles(){
+    const sql = 'SELECT * FROM roles;'
 
-getRoles()
+    db.connect(function(err) {
+        if (err) throw err;
+        db.query(sql, function (err, result, fields) {
+          if (err) throw err;
+          console.table(result);
+        });
+      });
 
-getEmployees() 
+}
+
+function getEmployees(){
+    const sql = 'SELECT * FROM employees;'
+
+    db.connect(function(err) {
+        if (err) throw err;
+        db.query(sql, function (err, result, fields) {
+          if (err) throw err;
+          console.table(result);
+        });
+      });
+
+   
+}
 
 
 
 module.exports = {
-    getDepartment,
+    getDepartments,
     getRoles,
     getEmployees
 }
