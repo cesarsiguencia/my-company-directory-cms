@@ -20,7 +20,10 @@ function getDepartments( req, res ){
 
 
 function getRoles(){
-    const sql = 'SELECT * FROM roles;'
+    const sql = `
+    SELECT role_id, job_title, role_salary, dept_id, dept_name FROM roles
+    LEFT JOIN departments ON roles.role_department = departments.dept_id;
+    `
 
     db.connect(function(err) {
         if (err) throw err;
@@ -33,7 +36,12 @@ function getRoles(){
 }
 
 function getEmployees(){
-    const sql = 'SELECT * FROM employees;'
+    const sql = `
+    SELECT id, first_name, last_name, job_title, role_salary, dept_id, dept_name, manager_id,manager_name FROM employees
+    LEFT JOIN roles ON employees.employee_role = roles.role_id
+    LEFT JOIN departments ON roles.role_department = departments.dept_id
+    LEFT JOIN managers ON employees.reporting_manager = managers.manager_id;
+    `
 
     db.connect(function(err) {
         if (err) throw err;
@@ -45,6 +53,7 @@ function getEmployees(){
 
    
 }
+
 
 
 

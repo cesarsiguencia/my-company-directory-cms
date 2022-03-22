@@ -1,73 +1,48 @@
--- INSERT INTO departments (dept_name)
--- VALUES
---   ('Human Resources'),
---   ('Finances'),
---   ('Operations and Management'),
---   ('Advertisement'),
---   ('Engineering');
-
-
-
-INSERT INTO roles (role_title, role_salary)
+INSERT INTO departments (dept_name)
 VALUES
-  ('Manager', '70000K'),
-  ('Engineer', '85000K'),
-  ('Associate', '45000K'),
-  ('Coordinator', '55000K'),
-  ('Assistant', '35000K'),
-  ('Director', '90000K');
+  ('Human Resources'),
+  ('Finances'),
+  ('Operations and Management'),
+  ('Advertisement'),
+  ('Engineering');
+
+INSERT INTO managers (manager_name)
+VALUES
+  ('John Dryden'),
+  ('Alexander Pope'),
+  ('Lionel Johnson');
 
 
--- INSERT INTO employees (first_name, last_name)
--- VALUES
---   ('James', 'Fraser'),
---   ('Jack', 'London'),
---   ('Robert', 'Bruce'),
---   ('Peter', 'Greenaway'),
---   ('Derek', 'Jarman'),
---   ('Paolo', 'Pasolini'),
---   ('Heathcote', 'Williams'),
---   ('Sandy', 'Powell'),
---   ('Emil', 'Zola'),
---   ('Sissy', 'Coalpits'),
---   ('Antoinette', 'Capet'),
---   ('Samuel', 'Delany'),
---   ('Tony', 'Duvert'),
---   ('Dennis', 'Cooper'),
---   ('Monica', 'Bellucci'),
---   ('Samuel', 'Johnson'),
---   ('John', 'Dryden'),
---   ('Alexander', 'Pope'),
---   ('Lionel', 'Johnson'),
---   ('Aubrey', 'Beardsley'),
---   ('Tulse', 'Luper'),
---   ('William', 'Morris'),
---   ('George', 'Shaw'),
---   ('Arnold', 'Bennett'),
---   ('Algernon', 'Blackwood'),
---   ('Rhoda', 'Broughton'),
---   ('Hart', 'Crane'),
---   ('Vitorio', 'DeSica'),
---   ('Wilkie', 'Collins'),
---   ('Elizabeth', 'Gaskell'),
---   ('George', 'Sand'),
---   ('Vernon', 'Lee'),
---   ('Arthur', 'Machen'),
---   ('Frederick', 'Marryat'),
---   ('Harriet', 'Martineau'),
---   ('George', 'Meredith'),
---   ('Margaret', 'Oliphant'),
---   ('Anthony', 'Trollope'),
---   ('Charlotte', 'Yonge'),
---   ('Horace', 'Walpole'),
---   ('Matthew', 'Lewis'),
---   ('William', 'Bedford'),
---   ('Anne', 'Radcliffe'),
---   ('Charles', 'Brown'),
---   ('Eliza', 'Parsons'),
---   ('Susan', 'Hill'),
---   ('Sydney', 'Owenson'),
---   ('Hubert', 'Crackanthorpe'),
---   ('William', 'Carleton'),
---   ('Gerald', 'Griffin');
+INSERT INTO roles (job_title, role_salary, role_department)
+VALUES
+  ('Manager', '70000K',5),
+  ('Engineer', '85000K',5),
+  ('Associate', '45000K',5),
+  ('Coordinator', '55000K',5),
+  ('Assistant', '35000K',5),
+  ('Director', '90000K',5);
 
+
+
+INSERT INTO employees (first_name, last_name, employee_role, reporting_manager)
+VALUES
+  ('James', 'Fraser', 2, 1),
+  ('Jack', 'London', 2, 1),
+  ('Robert', 'Bruce', 2, 1),
+  ('Peter', 'Greenaway', 2, 1),
+  ('Derek', 'Jarman', 2, 1),
+  ('Paolo', 'Pasolini', 2, 1),
+  ('Heathcote', 'Williams', 2, 1),
+  ('Sandy', 'Powell', 2, 1),
+  ('Emil', 'Zola', 2, 1),
+  ('Sissy', 'Coalpits', 2, 1),
+  ('Antoinette', 'Capet', 2, 1),
+  ('Samuel', 'Delany', 2, 1),
+  ('Tony', 'Duvert', 2, 1),
+  ('Dennis', 'Cooper', 2, 1),
+  ('Monica', 'Bellucci', 2, 1),
+  ('Samuel', 'Johnson', 2, 1);
+
+ 
+
+-- ask how to incorporate FS into seeds files

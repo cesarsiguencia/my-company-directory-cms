@@ -43,13 +43,72 @@ function addDepartment() {
             });
           });
 
+        
+
     })
   
 } 
 
 
 function addRole() {
+  inquirer.prompt([
+    {
+        type: "text",
+        name: 'roletitle',
+        message: "What is the name of the role you wish to add?",
+        validate: roleID => {
+          if (roleID) {
+            return true;
+          } else {
+            console.log("You need a name for the employee!");
+            return false;
+          }
+        }
+    },
 
+    {
+      type: "text",
+      name: 'rolesalary',
+      message: "What is this employee's salary?",
+      validate: salaryID => {
+        if (salaryID) {
+          return true;
+        } else {
+          console.log("Please enter a salary!");
+          return false;
+        }
+      }
+  },
+  {
+    type: "text",
+    name: 'roledepartment',
+    message: "What department is this role assigned to?",
+  
+}
+
+]).then((response) => {
+
+
+    const roleTitle = response.roletitle
+    const roleSalary = response.rolesalary
+    const roleDept = response.roledepartment
+
+
+
+    const sql = `INSERT INTO roles (role_title, role_salary, role_department) 
+    VALUES ('${roleTitle}', '${roleSalary}', '${roleDept}')`;
+
+    db.connect(function(err) {
+        if (err) throw err;
+        db.query(sql, function (err, result, fields) {
+          if (err) throw err;
+          console.log(result);
+        });
+      });
+
+    
+
+})
 }
 
 function addEmployee() {
