@@ -15,12 +15,12 @@ VALUES
 
 INSERT INTO roles (job_title, role_salary, role_department)
 VALUES
-  ('Manager', '70000K',5),
-  ('Engineer', '85000K',5),
-  ('Associate', '45000K',5),
-  ('Coordinator', '55000K',5),
-  ('Assistant', '35000K',5),
-  ('Director', '90000K',5);
+  ('Manager', '70K',5),
+  ('Engineer', '85K',5),
+  ('Associate', '45K',5),
+  ('Coordinator', '55K',5),
+  ('Assistant', '35K',5),
+  ('Director', '90K',5);
 
 
 

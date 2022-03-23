@@ -9,7 +9,7 @@ const db = mysql.createConnection({
     password: "holes360",
     database: "myworkplace"
 },
-console.log("Connected to myworkplace database")
 );
 
 module.exports = db;
+

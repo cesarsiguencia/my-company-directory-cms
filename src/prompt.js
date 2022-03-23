@@ -10,11 +10,17 @@ const { addDepartment, addRole, addEmployee } = require('../utils/addFunctions')
 
 const { updateRole } = require('../utils/updateFunctions')
 
-console.log('the inquirer page is read')
 
 
 const cmsPrompts = () => {
-  console.log('inquirer should start')
+  console.log(
+    
+  `
+  
+  Use CTNL + C anytime to exit
+  
+  `)
+  
   inquirer.prompt([
     {
       type: 'list',
@@ -26,24 +32,22 @@ const cmsPrompts = () => {
 
   ])
     .then((response) => {
-      console.log(response.options)
 
       const answers = response.options
 
-
-
       if (answers === 'View all departments') {
-        console.log('You have selected the view departments')
+        console.log('You have selected to view departments')
         getDepartments()
+        
       }
 
       if (answers === 'View all roles') {
-        console.log('You have selected the view all roles')
+        console.log('You have selected to view all roles')
         getRoles()
       }
 
       if (answers === 'View all employees') {
-        console.log('You have selected the view all employees')
+        console.log('You have selected to view all employees')
         getEmployees()
       }
 
@@ -62,12 +66,12 @@ const cmsPrompts = () => {
       if (answers === 'Update an employee role') {
         updateRole()
       }
-
+      console.log("Type 'CNTL' + 'C' to EXIT")
     })
+    
 
 }
 
 cmsPrompts();
-
 
 module.exports = { cmsPrompts }
