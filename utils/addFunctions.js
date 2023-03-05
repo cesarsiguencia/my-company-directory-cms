@@ -104,7 +104,6 @@ function addRole() {
 Successfully Added!
 Type 'CTNL + C' to quit
         `)
-
       });
     });
 
@@ -187,11 +186,8 @@ function addEmployee() {
 Successfully Added!
 Type 'CTNL + C' to quit
         `)
-        ;
-
       });
     });
-    
   })
 }
 
