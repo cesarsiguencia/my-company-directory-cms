@@ -1,11 +1,7 @@
-// ADD FUNCTIONS
-
-const path = require("path")
-
 const inquirer = require("inquirer")
 
 const db = require('../db/connection')
-// const { getDepartments } = require("./getFunctions")
+
 
 function addDepartment() {
   inquirer.prompt([
@@ -34,7 +30,10 @@ function addDepartment() {
       if (err) throw err;
       db.query(sql, function (err, result, fields) {
         if (err) throw err;
-        console.log(result);
+        console.log(`
+Successfully Added!
+Type 'CTNL + C' to quit
+        `)
       });
     });
 
@@ -101,7 +100,11 @@ function addRole() {
       if (err) throw err;
       db.query(sql, function (err, result, fields) {
         if (err) throw err;
-        console.log(result);
+        console.log(`
+Successfully Added!
+Type 'CTNL + C' to quit
+        `)
+
       });
     });
 
@@ -160,7 +163,7 @@ function addEmployee() {
       name: 'employee_manager',
       message:
 
-        `What role does this employee have? Use the following template to type in the number of the matching role name:
+        `Who is this employees manager?:
       1 = John Dryden
       2 = Alexander Pope
       3 = Lionel Johnson`
@@ -180,16 +183,20 @@ function addEmployee() {
       if (err) throw err;
       db.query(sql, function (err, result, fields) {
         if (err) throw err;
-        console.log(result);
+        console.log(`
+Successfully Added!
+Type 'CTNL + C' to quit
+        `)
+        ;
+
       });
     });
-
+    
   })
 }
 
 
 module.exports = {
-  // getDepartments,
   addDepartment,
   addRole,
   addEmployee

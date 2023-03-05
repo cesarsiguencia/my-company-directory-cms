@@ -42,7 +42,3 @@ VALUES
   ('Dennis', 'Cooper', 2, 1),
   ('Monica', 'Bellucci', 2, 1),
   ('Samuel', 'Johnson', 2, 1);
-
- 
-
--- ask how to incorporate FS into seeds files

@@ -1,8 +1,4 @@
-
-// const fs = require('fs');
-// const generateReadMe = require('./src/template.js')
-
-const inquirer = require('inquirer');  // the package that allows us to use questionaire in the terminal
+const inquirer = require('inquirer');
 
 const { getDepartments, getRoles, getEmployees } = require('../utils/getFunctions')
 
@@ -11,16 +7,38 @@ const { addDepartment, addRole, addEmployee } = require('../utils/addFunctions')
 const { updateRole } = require('../utils/updateFunctions')
 
 
+const cmsReturn = () => {
+  inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'returnMenu',
+      message: `Return to the main menu?`,
+      default: 'true',
+
+    },
+  ])
+    .then(({ returnMenu }) => {
+      if (returnMenu === false) {
+        console.log(
+          `
+Thank you for viewing!
+Press "CTRL + C" to exit.
+          `
+        )
+      } else {
+        cmsPrompts()
+      } 
+    })
+}
+
+
 
 const cmsPrompts = () => {
   console.log(
-    
-  `
-  
-  Use CTNL + C anytime to exit
-  
-  `)
-  
+
+    `Use CTNL + C anytime to exit
+    `)
+
   inquirer.prompt([
     {
       type: 'list',
@@ -38,7 +56,6 @@ const cmsPrompts = () => {
       if (answers === 'View all departments') {
         console.log('You have selected to view departments')
         getDepartments()
-        
       }
 
       if (answers === 'View all roles') {
@@ -52,26 +69,31 @@ const cmsPrompts = () => {
       }
 
       if (answers === 'Add a department') {
-        addDepartment()
+        return addDepartment()
       }
 
       if (answers === 'Add a role') {
-        addRole()
+        return addRole()
       }
 
       if (answers === 'Add an employee') {
-        addEmployee()
+        return addEmployee()
       }
 
       if (answers === 'Update an employee role') {
-        updateRole()
+        return updateRole()
       }
-      console.log("Type 'CNTL' + 'C' to EXIT")
-    })
-    
 
+      
+      cmsReturn()
+      console.log(``)
+
+    })
 }
 
-cmsPrompts();
+cmsPrompts()
 
-module.exports = { cmsPrompts }
+module.exports = { 
+  cmsPrompts, 
+  cmsReturn
+}
