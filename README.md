@@ -17,9 +17,9 @@ This application can only be run locally. Please follow the directions below to 
 
 1. Git clone or download the application and load on VSCode
 2. Run 'npm install' in the Command Line, make sure MySQL is installed.
-    - If this is your first time installing MySQL, please navigate to their documentation for proper installation into you computer and credential creation.
-3. Open application in VSCode and navigate to db/connection.js and include your MySQL user and password in the lines of code noted.
-4. Go to the MySQL shell in the Command Line and type the following commands to download the original database from /db.
+    - If this is your first time installing MySQL, please navigate to their documentation for proper installation onto your computer and credential creation.
+3. In VSCode, navigate to db/connection.js and include your MySQL user and password in the lines of code noted.
+4. Run the MySQL shell in the Command Line and type the following commands to download the original database from /db.
     - SOURCE db/db.sql
     - SOURCE db/schema.sql
     - SOURCE db/seeds.sql
