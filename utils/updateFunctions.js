@@ -13,7 +13,7 @@ function updateRole() {
             name: 'update_employee',
             message:
 
-        `Using the list below, type the ID of the employee whose role you wish to update:
+                `Using the list below, type the ID of the employee whose role you wish to update:
         1 = James Fraser
         2 = Jack London
         3 = Robert Bruce
@@ -84,12 +84,13 @@ function updateRole() {
             if (err) throw err;
             db.query(sql, function (err, result, fields) {
                 if (err) throw err;
-                console.log(result);
+                console.log(`
+Successfully Updated!
+Type 'CTNL + C' to quit
+        `)
             });
         });
-        
     })
-
 }
 
 module.exports = {
